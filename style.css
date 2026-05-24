@@ -1,0 +1,353 @@
+/* SUPER MODERN VIBE */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  min-height:100vh;
+
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-family:'Space Grotesk',sans-serif;
+
+  background:#05010a;
+
+  position:relative;
+}
+
+/* NOISE */
+
+body::before{
+
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+  radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+
+  background-size:3px 3px;
+
+  opacity:.04;
+
+  pointer-events:none;
+}
+
+/* BIG GRADIENT */
+
+.bg{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(circle at 20% 20%,#ff008055 0%,transparent 25%),
+  radial-gradient(circle at 80% 30%,#ff66cc44 0%,transparent 25%),
+  radial-gradient(circle at 50% 80%,#ff339944 0%,transparent 30%);
+
+  filter:blur(80px);
+
+  animation:bgMove 12s ease infinite alternate;
+}
+
+@keyframes bgMove{
+
+  from{
+    transform:scale(1) rotate(0deg);
+  }
+
+  to{
+    transform:scale(1.2) rotate(8deg);
+  }
+}
+
+/* CARD */
+
+.card{
+
+  width:100%;
+  max-width:560px;
+
+  padding:42px;
+
+  border-radius:34px;
+
+  position:relative;
+  z-index:2;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,.08),
+  rgba(255,255,255,.02)
+  );
+
+  backdrop-filter:blur(30px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+  0 0 120px rgba(255,0,128,.12),
+  0 40px 100px rgba(0,0,0,.6);
+
+  animation:show .7s ease;
+}
+
+@keyframes show{
+
+  from{
+    opacity:0;
+    transform:translateY(50px) scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* TOP */
+
+.top{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:34px;
+}
+
+.logo{
+
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.circle{
+
+  width:18px;
+  height:18px;
+
+  border-radius:50%;
+
+  background:#ff0080;
+
+  box-shadow:
+  0 0 15px #ff0080,
+  0 0 40px #ff0080;
+
+  animation:blink 1.4s infinite;
+}
+
+@keyframes blink{
+
+  0%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.3;
+  }
+
+  100%{
+    opacity:1;
+  }
+}
+
+.logo h1{
+
+  color:white;
+
+  font-size:42px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+}
+
+.badge{
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.06);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  color:#ff9fcb;
+
+  font-size:12px;
+
+  backdrop-filter:blur(10px);
+}
+
+/* DESC */
+
+.desc{
+
+  color:#ffb8d9;
+
+  line-height:1.8;
+
+  font-size:15px;
+
+  margin-bottom:30px;
+}
+
+/* INPUT */
+
+.input{
+
+  position:relative;
+}
+
+.input input{
+
+  width:100%;
+
+  height:64px;
+
+  padding:0 22px;
+
+  border:none;
+
+  outline:none;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  color:white;
+
+  font-size:15px;
+
+  transition:.3s;
+}
+
+.input input::placeholder{
+  color:#ff8cc2;
+}
+
+.input input:focus{
+
+  border-color:#ff0080;
+
+  box-shadow:
+  0 0 0 5px rgba(255,0,128,.14),
+  0 0 30px rgba(255,0,128,.25);
+}
+
+/* BUTTON */
+
+button{
+
+  width:100%;
+
+  margin-top:18px;
+
+  height:62px;
+
+  border:none;
+
+  border-radius:22px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-size:15px;
+  font-weight:700;
+
+  background:
+  linear-gradient(
+  135deg,
+  #ff0080,
+  #ff4db8,
+  #ff80cc
+  );
+
+  background-size:200% 200%;
+
+  animation:gradient 5s ease infinite;
+
+  transition:.25s;
+}
+
+@keyframes gradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+button:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 20px 40px rgba(255,0,128,.35);
+}
+
+/* FOOTER */
+
+.footer{
+
+  margin-top:28px;
+
+  display:flex;
+  justify-content:space-between;
+
+  color:#ff8cc2;
+
+  font-size:12px;
+}
+
+/* RESULT */
+
+.result{
+
+  margin-top:25px;
+
+  padding:20px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.06);
+
+  animation:show .5s ease;
+}
+
+.result a{
+
+  color:#ff80cc;
+
+  text-decoration:none;
+
+  font-weight:600;
+}
